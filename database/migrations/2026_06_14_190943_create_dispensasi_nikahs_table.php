@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('dispensasi_nikahs', function (Blueprint $table) {
+        Schema::create('dispensasis', function (Blueprint $table) {
             $table->id();
             $table->integer('no')->nullable();
             $table->string('nama_suami', 150)->nullable();
@@ -18,12 +18,11 @@ return new class extends Migration
             $table->string('tanggal', 50)->nullable();
             $table->string('file_path')->nullable()->comment('Menyimpan lokasi file di storage server');
             $table->string('dokumen_nama', 255)->nullable();
-            
             $table->timestamps();
         });
     }
     public function down(): void
     {
-        Schema::dropIfExists('dispensasi_nikahs');
+        Schema::dropIfExists('dispensasis');
     }
 };
